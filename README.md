@@ -1,4 +1,6 @@
-# LCMAP Science Execution Environment
+# LCMAP Event System
+
+*Subscription and Notification Capability for LCMAP Continuous Monitoring*
 
 **IMPORTANT**: This project is under active development and should be
 considered a work-in-progress.
@@ -18,17 +20,16 @@ considered a work-in-progress.
 
 The Land Change Monitoring Assessment and Projection (LCMAP) system will
 provide the science community with real-time access to decades of Landsat
-Analysis Ready Data (ARD). To make this system available to the public
-scientific computing community, an API service will be provided. The
-LCMAP REST service API is codified in this project and prototypes the
-functionality necessary to support the public service.
+Analysis Ready Data (ARD). A key aspect of that system is the ability to
+provide continuous monitoring of land change, and the LCMAP Event System
+addresses this need.
 
 
 ## Documentation [&#x219F;](#contents)
 
-The LCMAP SEE API reference is slowly being updated with docstrings. The project's auto-generated documentation is available here:
+The LCMAP Event system API reference is slowly being updated with docstrings. The project's auto-generated documentation is available here:
 
-* [http://usgs-eros.github.io/lcmap-see/current](http://usgs-eros.github.io/lcmap-see/current/)
+* [http://usgs-eros.github.io/lcmap-event/current](http://usgs-eros.github.io/lcmap-event/current/)
 
 
 ## Usage [&#x219F;](#contents)
@@ -53,6 +54,6 @@ TBD
 
 # License [&#x219F;](#contents)
 
-Copyright © 2015 United States Government
+Copyright © 2015-2016 United States Government
 
 NASA Open Source Agreement, Version 1.3
