@@ -34,8 +34,12 @@
     (let [conn (:conn component)
           ch (:ch component)]
       (log/debug "Using connection object:" conn)
-      (rmq/close ch)
-      (rmq/close conn)
+      (if (nil? ch)
+        (log/debug "Channel not defined; not closing.")
+        (rmq/close ch))
+      (if (nil? conn)
+        (log/debug "Connection not defined; not closing.")
+        (rmq/close conn))
       (-> component
           (assoc :ch nil)
           (assoc :conn nil)))))
