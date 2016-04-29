@@ -24,19 +24,21 @@
             ch (lch/open conn)]
         (log/debug "Component keys:" (keys component))
         (log/debug "Successfully created messaging connection:" conn)
-        (assoc component :conn conn)
-        (assoc component :ch ch))))
+        (-> component
+            (assoc :conn conn)
+            (assoc :ch ch)))))
 
   (stop [component]
     (log/info "Stopping LCMAP Event messaging client ...")
     (log/debug "Component keys" (keys component))
     (let [conn (:conn component)
-             ch (:ch component)]
-      (do (log/debug "Using connection object:" conn)
-          (rmq/close ch)
-          (rmq/close conn)))
-    (assoc component :ch nil)
-    (assoc component :conn nil)))
+          ch (:ch component)]
+      (log/debug "Using connection object:" conn)
+      (rmq/close ch)
+      (rmq/close conn)
+      (-> component
+          (assoc :ch nil)
+          (assoc :conn nil)))))
 
 (defn new-messaging-client []
   (->MessagingClient))
