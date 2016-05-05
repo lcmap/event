@@ -74,4 +74,7 @@
                      :port 5672
                      :vhost "/"
                      :default-exchange-name "lcmap.event"
-                     :default-queue-name "lcmap.event-stream"}}}})
+                     :default-queue-name "lcmap.event-stream"}}}
+    :testing {
+      :env {
+        :log-level :info}}})
