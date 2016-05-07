@@ -4,15 +4,11 @@
 
 (def opt-spec [])
 
-(def db-cfg-schema
-  {:hosts [schema/Str]})
-
 (def msg-cfg-schema
   {:host schema/Str})
 
 (def cfg-schema
-  {:lcmap.event.components.db db-cfg-schema
-   :lcmap.event.components.messaging msg-cfg-schema
+  {:lcmap.event.components.messaging msg-cfg-schema
    schema/Keyword schema/Any})
 
 (def defaults
