@@ -1,5 +1,5 @@
 (ns lcmap.event.config
-  (:require [lcmap.config.helpers :as cfg]
+  (:require [lcmap.config.helpers :refer :all]
             [schema.core :as schema]))
 
 (def opt-spec [])
@@ -8,11 +8,11 @@
   {:host schema/Str})
 
 (def cfg-schema
-  {:lcmap.event.components.messaging msg-cfg-schema
+  {:lcmap.event msg-cfg-schema
    schema/Keyword schema/Any})
 
 (def defaults
-  {:ini (clojure.java.io/file (System/getenv "HOME") ".usgs" "lcmap.ini")
-   :spec opt-spec
+  {:ini *lcmap-config-ini*
    :args *command-line-args*
+   :spec opt-spec
    :schema cfg-schema})

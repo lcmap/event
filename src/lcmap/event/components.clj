@@ -32,11 +32,12 @@
             [lcmap.config.components.config :as config]
             [lcmap.event.components.messaging :as messaging]
             [lcmap.event.components.logger :as logger]
-            [lcmap.event.components.system :as system]))
+            [lcmap.event.components.system :as system]
+            [lcmap.event.config]))
 
 (defn init []
   (component/system-map
-    :cfg (config/new-configuration)
+    :cfg (config/new-configuration lcmap.event.config/defaults)
     :logger (component/using
               (logger/new-logger)
               [:cfg])

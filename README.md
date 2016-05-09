@@ -36,7 +36,7 @@ The LCMAP Event system API reference is slowly being updated with docstrings. Th
 Add the following secions to ~/.usgs/lcmap.ini:
 
 ```
-[lcmap.event.components.messaging]
+[lcmap.event]
 host=localhost
 ```
 
