@@ -9,7 +9,7 @@
 
 (def cfg-schema
   (merge event-schema
-         {schema/Keyword schema/Any})
+         {schema/Keyword schema/Any}))
 
 (def defaults
   {:ini *lcmap-config-ini*
