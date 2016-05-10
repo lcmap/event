@@ -4,12 +4,12 @@
 
 (def opt-spec [])
 
-(def msg-cfg-schema
-  {:host schema/Str})
+(def event-schema
+  {:lcmap.event {:host schema/Str}})
 
 (def cfg-schema
-  {:lcmap.event msg-cfg-schema
-   schema/Keyword schema/Any})
+  (merge event-schema
+         {schema/Keyword schema/Any})
 
 (def defaults
   {:ini *lcmap-config-ini*
