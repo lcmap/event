@@ -5,7 +5,9 @@
 (def opt-spec [])
 
 (def event-schema
-  {:lcmap.event {:host schema/Str}})
+  {:lcmap.event {:host schema/Str
+                 :port schema/Num
+                 schema/Keyword schema/Str}})
 
 (def cfg-schema
   (merge event-schema
