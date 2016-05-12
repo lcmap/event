@@ -18,7 +18,7 @@
 
   (start [component]
     (log/info "Starting LCMAP Event messaging client ...")
-    (let [msg-cfg (get-in component [:cfg :env :messaging])]
+    (let [msg-cfg (get-in component [:cfg :lcmap.event])]
       (log/debug "Using config:" msg-cfg)
       (let [conn (rmq/connect msg-cfg)
             ch (lch/open conn)]

@@ -31,6 +31,14 @@ The LCMAP Event system API reference is slowly being updated with docstrings. Th
 
 * [http://usgs-eros.github.io/lcmap-event/current](http://usgs-eros.github.io/lcmap-event/current/)
 
+## Configuration [&#x219F;](#contents)
+
+Add the following secions to ~/.usgs/lcmap.ini:
+
+```
+[lcmap.event]
+host=localhost
+```
 
 ## Usage [&#x219F;](#contents)
 
