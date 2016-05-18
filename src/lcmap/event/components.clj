@@ -52,14 +52,19 @@
             :msging])))
 
 (defn stop [system component-key]
-  (let [updated-component (component/stop (component-key system))]
-    (assoc system component-key updated-component)))
+  (->> system
+       (component-key)
+       (component/stop)
+       (assoc system component-key)))
 
 (defn start [system component-key]
-  (let [updated-component (component/start (component-key system))]
-    (assoc system component-key updated-component)))
+  (->> system
+       (component-key)
+       (component/start)
+       (assoc system component-key)))
 
 (defn restart [system component-key]
   (-> system
-      (stop)
-      (start)))
+      (stop component-key)
+      (start component-key)))
+
