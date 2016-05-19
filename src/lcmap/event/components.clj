@@ -30,8 +30,8 @@
   (:require [clojure.tools.logging :as log]
             [com.stuartsierra.component :as component]
             [lcmap.config.components.config :as config]
+            [lcmap.logger.components.logger :as logger]
             [lcmap.event.components.messaging :as messaging]
-            [lcmap.event.components.logger :as logger]
             [lcmap.event.components.system :as system]
             [lcmap.event.config]))
 
