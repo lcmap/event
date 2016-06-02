@@ -107,8 +107,7 @@
 (defn reset []
   (stop)
   (deinit)
-  (config/get-config :force-reload)
-  (refresh :after 'lcmap.see.dev/run))
+  (refresh :after 'lcmap.event.dev/run))
 
 ;;; Aliases
 
