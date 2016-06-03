@@ -1,9 +1,8 @@
-(ns ^{:doc
+(ns lcmap.event.components.system
   "Top-level LCMAP Event system component
 
   For more information, see the module-level code comments in
-  ``lcmap.event.components``."}
-  lcmap.event.components.system
+  ``lcmap.event.components``."
   (:require [clojure.tools.logging :as log]
             [com.stuartsierra.component :as component]))
 

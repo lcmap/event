@@ -1,9 +1,8 @@
-(ns ^{:doc
+(ns lcmap.event.components.messaging
   "Database LCMAP REST Service system component
 
   For more information, see the module-level code comments in
-  ``lcmap.event.components``."}
-  lcmap.event.components.messaging
+  ``lcmap.event.components``."
   (:require [clojure.tools.logging :as log]
             [com.stuartsierra.component :as component]
             [langohr.core :as rmq]

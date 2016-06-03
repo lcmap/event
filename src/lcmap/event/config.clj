@@ -1,4 +1,5 @@
 (ns lcmap.event.config
+  ""
   (:require [lcmap.config.helpers :refer :all]
             [schema.core :as schema]))
 
