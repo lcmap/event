@@ -48,7 +48,7 @@
   :repl-options {:init-ns lcmap.event.dev}
   :main lcmap.event.app
   :target-path "target/%s"
-  :codox {:project {:name "LCMAP Event System Library"
+  :codox {:project {:name "lcmap.event"
                     :description "The Event Subscription and Notification Component for the USGS Land Change Monitoring Assessment and Projection (LCMAP) Computation and Analysis Platform"}
           :namespaces [#"^lcmap.event\."]
           :output-path "docs/master/current"
