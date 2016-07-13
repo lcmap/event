@@ -1,7 +1,7 @@
 (ns lcmap.event.app
   (:require [clojure.tools.logging :as log]
             [com.stuartsierra.component :as component]
-            [clojusc/twig :as logger]
+            [clojusc.twig :as logger]
             [lcmap.event.components :as components]
             [lcmap.event.util :as util])
   (:gen-class))
