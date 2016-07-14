@@ -34,9 +34,10 @@ addresses this need.
 
 ## Documentation [&#x219F;](#contents)
 
-The LCMAP Event system API reference is slowly being updated with docstrings. The project's auto-generated documentation is available here:
+The LCMAP Event system API reference is slowly being updated with docstrings.
+The project's auto-generated documentation is available here:
 
-* [http://usgs-eros.github.io/lcmap-event/current](http://usgs-eros.github.io/lcmap-event/current/)
+* [http://usgs-eros.github.io/lcmap-event](http://usgs-eros.github.io/lcmap-event)
 
 
 ## Configuration [&#x219F;](#contents)
@@ -45,6 +46,7 @@ Add the following secions to ~/.usgs/lcmap.ini:
 
 ```
 [lcmap.event]
+
 host=localhost
 ```
 
