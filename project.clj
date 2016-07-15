@@ -19,7 +19,7 @@
                  ;; Messaging
                  [com.novemberain/langohr "3.6.1"]
                  ;; LCMAP Components
-                 [gov.usgs.eros/lcmap-config "0.5.0-SNAPSHOT"]
+                 [gov.usgs.eros/lcmap-config "0.5.0"]
                  [gov.usgs.eros/lcmap-logger "0.5.0-SNAPSHOT"]
                  [gov.usgs.eros/lcmap-client-clj "0.5.0-SNAPSHOT"]
                  ;; XXX note that we may still need to explicitly include the
