@@ -1,4 +1,4 @@
-(defproject gov.usgs.eros/lcmap-event "0.5.0-SNAPSHOT"
+(defproject gov.usgs.eros/lcmap-event "0.5.0"
   :description "LCMAP Event System"
   :url "https://github.com/USGS-EROS/lcmap-event"
   :license {:name "NASA Open Source Agreement, Version 1.3"
@@ -20,8 +20,8 @@
                  [com.novemberain/langohr "3.6.1"]
                  ;; LCMAP Components
                  [gov.usgs.eros/lcmap-config "0.5.0"]
-                 [gov.usgs.eros/lcmap-logger "0.5.0-SNAPSHOT"]
-                 [gov.usgs.eros/lcmap-client-clj "0.5.0-SNAPSHOT"]
+                 [gov.usgs.eros/lcmap-logger "0.5.0"]
+                 [gov.usgs.eros/lcmap-client-clj "0.5.0"]
                  ;; XXX note that we may still need to explicitly include the
                  ;; Apache Java HTTP client, since the version used by the LCMAP
                  ;; client is more recent than that used by Chas Emerick's
