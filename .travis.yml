@@ -5,7 +5,8 @@ script:
 jdk:
   - oraclejdk8
   #- oraclejdk7
-  - openjdk6
+  # OpenJDK 6 Doesn't support the use of agents as made in this project
+  #- openjdk6
   - openjdk7
   #- openjdk8
 #addons:
