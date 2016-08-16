@@ -10,13 +10,16 @@
                  :port schema/Num
                  schema/Keyword schema/Str}})
 
-(def logging-schema
-  {:lcmap.logging {:level schema/Str
-                   :namespaces [schema/Str]}})
+(def logger-schema
+  {:lcmap.logger {:level schema/Str
+                  :namespaces [schema/Str]
+                  :msg-host schema/Str
+                  :msg-port schema/Num
+                  schema/Keyword schema/Str}})
 
 (def cfg-schema
   (merge event-schema
-         logging-schema
+         logger-schema
          {schema/Keyword schema/Any}))
 
 (def defaults
