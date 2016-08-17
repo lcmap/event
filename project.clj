@@ -74,7 +74,7 @@
         {:active-profile "development"
          :messaging {:host "127.0.0.1"
                      :port 5672
-                     :vhost "/"
+                     :vhost "/lcmap"
                      :default-exchange-name "lcmap.event"
                      :default-queue-name "lcmap.event-stream"}}}
     :testing {
