@@ -1,9 +1,8 @@
 # lcmap.event
 
+[![Build Status][travis-badge]][travis][![Clojars Project][clojars-badge]][clojars]
+
 *Subscription and Notification Capability for LCMAP Continuous Monitoring*
-
-
-[![Build Status][travis-badge]][travis][![Dependencies Status][deps-badge]][deps][![Clojars Project][clojars-badge]][clojars]
 
 [![LCMAP open source project logo][lcmap-logo]][lcmap-logo-large]
 
