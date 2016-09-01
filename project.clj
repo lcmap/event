@@ -52,8 +52,6 @@
                  [leiningen-core]]
   :plugins [[lein-parent "0.3.0"]]
   :source-paths ["src"]
-  :java-agents [[co.paralleluniverse/quasar-core "0.7.3"]]
-  :jvm-opts ["-Dco.paralleluniverse.fibers.detectRunawayFibers=false"]
   :repl-options {:init-ns lcmap.event.dev}
   :main lcmap.event.app
   :codox {:project {:name "lcmap.event"
