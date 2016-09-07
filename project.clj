@@ -1,18 +1,18 @@
 (defproject gov.usgs.eros/lcmap-event "1.0.0-SNAPSHOT"
   :parent-project {
-    :coords [gov.usgs.eros/lcmap-system "1.0.0-SNAPSHOT"]
-    :inherit [
-      :deploy-repositories
-      :license
-      :managed-dependencies
-      :plugins
-      :pom-addition
-      :repositories
-      :target-path
+                   :coords [gov.usgs.eros/lcmap-system "1.0.0-SNAPSHOT"]
+                   :inherit [
+                             :deploy-repositories
+                             :license
+                             :managed-dependencies
+                             :plugins
+                             :pom-addition
+                             :repositories
+                             :target-path]}
       ;; XXX The following can be un-commented once this issue is resolved:
       ;;     * https://github.com/achin/lein-parent/issues/3
       ;; [:profiles [:uberjar :dev]]
-      ]}
+
   :description "LCMAP Event System"
   :url "https://github.com/USGS-EROS/lcmap-event"
   :dependencies [[org.clojure/clojure]
@@ -34,6 +34,7 @@
                  [gov.usgs.eros/lcmap-config]
                  [gov.usgs.eros/lcmap-logger]
                  [gov.usgs.eros/lcmap-client-clj]
+                 [gov.usgs.eros/lcmap-commons]
                  ;; XXX note that we may still need to explicitly include the
                  ;; Apache Java HTTP client, since the version used by the LCMAP
                  ;; client is more recent than that used by Chas Emerick's
@@ -67,22 +68,22 @@
   :logging-namespaces [lcmap.event
                        lcmap.client]
   :profiles {
-    :uberjar {:aot :all}
+             :uberjar {:aot :all}
     ;; configuration for dev environment -- if you need to make local changes,
     ;; copy `:env { ... }` into `{:user ...}` in your ~/.lein/profiles.clj and
     ;; then override values there
-    :dev {
-      :dependencies [[org.clojure/tools.namespace "0.3.0-alpha3"]
-                     [slamhound "1.5.5"]]
-      :aliases {"slamhound" ["run" "-m" "slam.hound"]}
-      :source-paths ["dev-resources/src"]
-      :env
-        {:active-profile "development"
-         :messaging {:host "127.0.0.1"
-                     :port 5672
-                     :vhost "/lcmap"
-                     :default-exchange-name "lcmap.event"
-                     :default-queue-name "lcmap.event-stream"}}}
-    :testing {
-      :env {
-        :log-level :info}}})
+             :dev {
+                   :dependencies [[org.clojure/tools.namespace "0.3.0-alpha3"]
+                                  [slamhound "1.5.5"]]
+                   :aliases {"slamhound" ["run" "-m" "slam.hound"]}
+                   :source-paths ["dev-resources/src"]
+                   :env
+                   {:active-profile "development"
+                    :messaging {:host "127.0.0.1"
+                                :port 5672
+                                :vhost "/lcmap"
+                                :default-exchange-name "lcmap.event"
+                                :default-queue-name "lcmap.event-stream"}}}
+             :testing {
+                       :env {
+                             :log-level :info}}})
