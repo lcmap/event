@@ -51,30 +51,30 @@
 
 (defn start
   ([]
-    (if (nil? system)
-      (init))
-    (if (util/in? [:started :running] state)
-      (log/error "System has already been started.")
-      (do
-        (alter-var-root #'system component/start)
-        (alter-var-root #'state (fn [_] :started))))
-    state)
+   (if (nil? system)
+     (init))
+   (if (util/in? [:started :running] state)
+     (log/error "System has already been started.")
+     (do
+       (alter-var-root #'system component/start)
+       (alter-var-root #'state (fn [_] :started))))
+   state)
   ([component-key]
-    (alter-var-root #'system
-                    (constantly (components/start system component-key)))))
+   (alter-var-root #'system
+                   (constantly (components/start system component-key)))))
 
 (defn stop
   ([]
-    (if (= state :stopped)
-      (log/error "System already stopped.")
-      (do
-        (alter-var-root #'system
-          (fn [s] (when s (component/stop s))))
-        (alter-var-root #'state (fn [_] :stopped))))
-    state)
+   (if (= state :stopped)
+     (log/error "System already stopped.")
+     (do
+       (alter-var-root #'system
+         (fn [s] (when s (component/stop s))))
+       (alter-var-root #'state (fn [_] :stopped))))
+   state)
   ([component-key]
-    (alter-var-root #'system
-                    (constantly (components/stop system component-key)))))
+   (alter-var-root #'system
+                   (constantly (components/stop system component-key)))))
 
 (defn restart [component-key]
   (alter-var-root #'system
@@ -93,9 +93,9 @@
 
 (defn -refresh
   ([]
-    (repl/refresh))
+   (repl/refresh))
   ([& args]
-    (apply #'repl/refresh args)))
+   (apply #'repl/refresh args)))
 
 (defn refresh [& args]
   "This is essentially an alias for clojure.tools.namespace.repl/refresh."

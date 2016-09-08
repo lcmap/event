@@ -14,13 +14,13 @@
                  :src-component nil})
 
 (defn new-input-detected
-    [input-src input-id]
+  "Fired when a new input has been observed and should be ingested"
+    [input-uri]
     (merge base-event {:name "new-input-detected"
-                       :input-src input-src
-                       :input-id input-id})
+                       :input-uri input-uri})
 
  (defn ingest-started
-    [input-src input-id]
+    [input-id campaign-id]
     (merge base-event {:name "ingest-started"
-                       :input-src input-src
-                       :input-id input-id})))
+                       :input-id input-id
+                       :campaign-id campaign-id})))
