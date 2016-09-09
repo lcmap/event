@@ -26,5 +26,4 @@ notifications:
       - duncan.mcgreggor.ctr@usgs.gov
   slack:
     rooms:
-      - lcmap:UTqlh9PfPVomfpli10WKyZoh#cicd
-      - lcmap:UTqlh9PfPVomfpli10WKyZoh#cevent
+      - lcmap:UTqlh9PfPVomfpli10WKyZoh#event
