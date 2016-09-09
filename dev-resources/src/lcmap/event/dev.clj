@@ -37,7 +37,7 @@
     (log/error "System has aready been initialized.")
     (do
       (alter-var-root #'system
-        (constantly (components/init)))
+                      (constantly (components/init)))
       (alter-var-root #'state (fn [_] :initialized))))
   state)
 
@@ -69,7 +69,7 @@
      (log/error "System already stopped.")
      (do
        (alter-var-root #'system
-         (fn [s] (when s (component/stop s))))
+                       (fn [s] (when s (component/stop s))))
        (alter-var-root #'state (fn [_] :stopped))))
    state)
   ([component-key]

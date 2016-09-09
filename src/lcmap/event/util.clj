@@ -8,7 +8,7 @@
                     (Thread. func)))
 
 (defn in?
-  "This function returns true if the provided seqenuce contains the given
-  elment."
+  "This function returns true if the provided sequence contains the given
+  element."
   [seq elm]
   (some #(= elm %) seq))

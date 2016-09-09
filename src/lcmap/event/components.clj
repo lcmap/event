@@ -36,19 +36,19 @@
 
 (defn init []
   (component/system-map
-    :cfg (config/new-configuration lcmap.event.config/defaults)
-    :logger (component/using
-              (logger/new-logger)
-              [:cfg])
-    :msging (component/using
-             (messaging/new-messaging-client)
-             [:cfg
-              :logger])
-    :sys (component/using
-           (system/new-lcmap-event-toplevel)
-           [:cfg
-            :logger
-            :msging])))
+   :cfg (config/new-configuration lcmap.event.config/defaults)
+   :logger (component/using
+            (logger/new-logger)
+            [:cfg])
+   :msging (component/using
+            (messaging/new-messaging-client)
+            [:cfg
+             :logger])
+   :sys (component/using
+         (system/new-lcmap-event-toplevel)
+         [:cfg
+          :logger
+          :msging])))
 
 (defn stop [system component-key]
   (->> system

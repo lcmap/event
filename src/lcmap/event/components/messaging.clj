@@ -12,7 +12,7 @@
             [langohr.consumers :as lc]
             [langohr.basic :as lb]))
 
-(defrecord MessagingClient [ ]
+(defrecord MessagingClient []
   component/Lifecycle
 
   (start [component]
