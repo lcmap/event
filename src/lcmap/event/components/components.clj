@@ -1,4 +1,4 @@
-(ns lcmap.event.components
+(ns lcmap.event.components.components
   "LCMAP Event system components
 
   Large applications often consist of many stateful processes which must be

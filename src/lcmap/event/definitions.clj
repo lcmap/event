@@ -31,7 +31,7 @@
    :publisher nil})
 
 ;; For each event defined, any key with a value of nil is considered to be
-;; a required argument
+;; a required argument.  A key with a value is considered a default
 (def events
   {"base-event" {}
    "new-input-detected" {:input-uri nil}

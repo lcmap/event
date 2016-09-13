@@ -25,7 +25,7 @@
             ;; other LCMAP libraries
             [lcmap.config :as config]
             ;; api
-            [lcmap.event.components :as components]
+            [lcmap.event.components.components :as components]
             [lcmap.event.exceptions :as exceptions]
             [lcmap.event.util :as util]))
 
