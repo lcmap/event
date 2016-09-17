@@ -63,13 +63,16 @@ TBD
 
 ## Development [&#x219F;](#contents)
 Starting rabbitmq:
+
     `make rabbit-up`
 
 Then from the project root:
+
     `lein repl`
     `lcmap.event.dev=> (start)`
 
 Stopping:
+
     `lcmap.event.dev=> (stop)`
     `make rabbit-down`
 
