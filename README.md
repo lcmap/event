@@ -68,13 +68,13 @@ Starting rabbitmq:
 
 Then from the project root:
 
-    `lein repl`
-    `lcmap.event.dev=> (start)`
+    `lein repl
+    lcmap.event.dev=> (start)`
 
 Stopping:
 
-    `lcmap.event.dev=> (stop)`
-    `make rabbit-down`
+    `lcmap.event.dev=> (stop)
+    make rabbit-down`
 
 ## Deployment [&#x219F;](#contents)
 
