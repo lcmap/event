@@ -37,14 +37,19 @@ The project's auto-generated documentation is available here:
 
 ## Configuration [&#x219F;](#contents)
 
-Add the following secions to ~/.usgs/lcmap.ini:
+Add the following sections to ~/.usgs/lcmap.ini:
 
 ```
 [lcmap.event]
-
-host=localhost
+host = localhost
+port = 5672
+vhost = /lcmap
+username = alice
+password = sekrit
+connection-name = lcmap.event.conn
+default-exchange-name = lcmap.event.ex
+default-queue-name = lcmap.event.q
 ```
-
 
 ## Usage [&#x219F;](#contents)
 
@@ -57,9 +62,16 @@ TBD
 
 
 ## Development [&#x219F;](#contents)
+Starting rabbitmq:
+    `make rabbit-up`
 
-TBD
+Then from the project root:
+    `lein repl`
+    `lcmap.event.dev=> (start)`
 
+Stopping:
+    `lcmap.event.dev=> (stop)`
+    `make rabbit-down`
 
 ## Deployment [&#x219F;](#contents)
 
@@ -71,7 +83,6 @@ TBD
 Copyright © 2015-2016 United States Government
 
 NASA Open Source Agreement, Version 1.3
-
 
 <!-- Named page links below: /-->
 

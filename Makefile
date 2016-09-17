@@ -1,4 +1,4 @@
-VERSION=0.5.0
+VERSION=1.0.0
 PROJECT=lcmap-event
 STANDALONE=target/$(PROJECT)-$(VERSION)-SNAPSHOT-standalone.jar
 ROOT_DIR = $(shell pwd)

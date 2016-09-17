@@ -1,4 +1,4 @@
-(ns lcmap.event.components.components
+(ns lcmap.event.components
   "LCMAP Event system components
 
   Large applications often consist of many stateful processes which must be
@@ -19,7 +19,7 @@
      time it defines each component's dependencies.
    * During startup the components are brought up in dependency order with
      each one's start function getting called.
-   * During shutdown this order is revered and the shutdown function for
+   * During shutdown this order is reversed and the shutdown function for
      each component is called.
 
   For more information on the Clojure component library, see:

@@ -1,0 +1,12 @@
+rabbit:
+  image: rabbitmq:3-management
+  environment:
+    - "RABBITMQ_DEFAULT_VHOST=/lcmap"
+    - "RABBITMQ_DEFAULT_USER=alice"
+    - "RABBITMQ_DEFAULT_PASS=sekrit"
+    # Uncomment for production
+    # "RABBITMQ_HIPE_COMPILE=1"
+  ports:
+    - "15672:15672"
+    - "5672:5672"
+#--hostname my-rabbit
