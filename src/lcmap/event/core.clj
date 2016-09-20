@@ -2,34 +2,42 @@
   "Code interface for using the event component"
   (:require [lcmap.event.definitions :as evt-defs]))
 
-(defn exists? [event]
+(defn exists?
   "Determines if an event is defined"
+  [event]
   (contains? evt-defs/events event))
 
-(defn valid? [event args]
+(defn valid?
   "Determine if an event+args is valid"
+  [event args]
   (println "valid! called"))
 
-(defn list-events []
+(defn list-events
   "List all defined events in the system"
-  (println "listing events..."))
+  []
+  (keys evt-defs/events))
 
-(defn event-args [event]
+(defn event-args
   "Return required arguments for a named event"
+  [event]
   (println "event-args called"))
 
-(defn publish! [event args]
+(defn publish!
   "Sends an event"
+  [event args]
   (println "publish! called"))
 
-(defn subscribe! [event callback]
+(defn subscribe!
   "Create an event subscription"
+  [event callback]
   (println "subscribe! called"))
 
-(defn unsubscribe! [event subscriber_id]
+(defn unsubscribe!
   "Remove an event subscription"
-    (println "unsubscribe! called"))
+  [event subscriber_id]
+  (println "unsubscribe! called"))
 
-(defn rpc! [service args]
-    "Issues an rpc call to the named service"
-    (println "rpc! called"))
+(defn rpc!
+  "Issues an rpc call to the named service"
+  [service args]
+  (println "rpc! called"))
