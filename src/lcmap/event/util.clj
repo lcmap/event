@@ -1,7 +1,4 @@
-(ns lcmap.event.util
-  (:require [clojure.core.memoize :as memo]
-            [clojure.string :as string]
-            [clojure.tools.logging :as log]))
+(ns lcmap.event.util)
 
 (defn add-shutdown-handler [func]
   (.addShutdownHook (Runtime/getRuntime)

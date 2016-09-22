@@ -10,8 +10,9 @@
   tied directly to the events as they are defined."
 
   (:require [clojure.tools.logging :as log]
-            [clj-time.core :as time]
-            [lcmap.event.exceptions :as exceptions]))
+            [lcmap.event.exceptions :as exceptions]
+            [lcmap.commons.time :as time]
+            [schema.core :as s]))
 
 (def default-headers
   "The following headers are defined by AMQP 0.9.1
@@ -32,33 +33,41 @@
    :expires nil
    :publisher nil})
 
-(def base-event {:timestamp nil})
+(def base-schema {:type s/Str
+                  :id s/Uuid
+                  :related-to s/Uuid
+                  :timestamp s/Regex})
 
-   ;; For each event defined, any key with a value of nil is considered to be
-   ;; a required argument.  A key with a value is considered a default
-(def events
-  {"data-missing" {}
+;; For each event defined, any key with a value of nil is considered to be
+;; a required argument.  A key with a value is considered a default.
+;; TODO: replace with a data validation lib
+(def schema
+  {"data-missing" {:header {} :transport {} :schema {}}
    "new-input-detected" {:input-uri nil
                          :somedefault "defaulted"
                          :transport {:rabbitmq {}}}
-   "ingest-campaign-started" {}
-   "ingest-campaign-completed" {}
-   "ingest-campaign-failed" {}
+   "ingest-campaign-started" {:transport {} :schema {}}
+   "ingest-campaign-completed" {:transport {} :schema {}}
+   "ingest-campaign-failed" {:transport {} :schema {}}
    "ingest-started" {:ucid nil
                      :input-uri nil}
-   "ingest-completed" {}
-   "model-execution-started" {}
-   "model-execution-completed" {}
-   "model-execution-failed" {}
-   "inventory-added" {}
-   "inventory-removed" {}})
+   "ingest-completed" {:transport {} :schema {}}
+   "model-execution-started" {:transport {} :schema {}}
+   "model-execution-completed" {:transport {} :schema {}}
+   "model-execution-failed" {:transport {} :schema {}}
+   "inventory-added" {:transport {} :schema {}}
+   "inventory-removed" {:transport {} :schema {}}})
+
+(defn list-defs
+  []
+  (base-schema))
 
 (defn evt-exists?
   "Is the event defined?"
   [event]
-  (contains? events event))
+  (contains? list-defs event))
 
-(defn get-evt
+(defn get-def
   "Returns the event definition"
   [event]
   (if (evt-exists? event)
@@ -82,7 +91,7 @@
   [event attribute]
   (not (attr-reqd? event attribute)))
 
-;; (defn reqd-attrs
-;; "Returns all attributes that must be supplied for an event"
-;; [event]
-;; (println "reqd-attrs")
+(defn valid?
+  "Is an event structured properly?"
+  [evt]
+  (true))

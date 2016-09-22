@@ -5,12 +5,8 @@
   ``lcmap.event.components``."
   (:require [clojure.tools.logging :as log]
             [com.stuartsierra.component :as component]
-            [langohr.core :as rmq]
             [langohr.channel :as lch]
-            [langohr.queue :as lq]
-            [langohr.exchange :as le]
-            [langohr.consumers :as lc]
-            [langohr.basic :as lb]))
+            [langohr.core :as rmq]))
 
 (defrecord MessagingClient []
   component/Lifecycle

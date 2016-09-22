@@ -15,26 +15,24 @@
 
   :description "LCMAP Event System"
   :url "https://github.com/USGS-EROS/lcmap-event"
-  :dependencies [[org.clojure/clojure]
+  :dependencies [[byte-streams]
+                 [clj-time]
+                 [clojure-ini]
+                 [clj-http]
+                 [commons-codec]
+                 [com.stuartsierra/component]
+                 [com.novemberain/langohr]
+                 [dire]
+                 [gov.usgs.eros/lcmap-config]
+                 [gov.usgs.eros/lcmap-logger]
+                 [gov.usgs.eros/lcmap-client-clj]
+                 [gov.usgs.eros/lcmap-commons]
+                 [org.clojure/clojure]
                  [org.clojure/core.match]
                  [org.clojure/data.codec]
                  [org.clojure/data.json]
                  [org.clojure/data.xml]
                  [org.clojure/core.memoize]
-                 ;; Componentization
-                 [com.stuartsierra/component]
-                 ;; Logging and Error Handling -- note that we need to explicitly pull
-                 ;; in a version of slf4j so that we don't get conflict messages on the
-                 ;; console
-                 [dire]
-                 [slingshot]
-                 ;; Messaging
-                 [com.novemberain/langohr]
-                 ;; LCMAP Components
-                 [gov.usgs.eros/lcmap-config]
-                 [gov.usgs.eros/lcmap-logger]
-                 [gov.usgs.eros/lcmap-client-clj]
-                 [gov.usgs.eros/lcmap-commons]
                  ;; XXX note that we may still need to explicitly include the
                  ;; Apache Java HTTP client, since the version used by the LCMAP
                  ;; client is more recent than that used by Chas Emerick's
@@ -43,14 +41,14 @@
                  ;; client library).
                  ;; XXX temp dependencies:
                  [org.apache.httpcomponents/httpclient]
-                 [clojure-ini]
-                 [clj-http]
-                 ;; Data types, encoding, etc.
-                 [byte-streams]
-                 [clj-time]
-                 [commons-codec]
                  ;; Dev and project metadata
-                 [leiningen-core]]
+                 [leiningen-core]
+                 [prismatic/schema]
+                 ;; Logging and Error Handling -- note that we need to
+                 ;; explicitly pull in a version of slf4j so that we don't
+                 ;; get conflict messages on the console
+                 [slingshot]]
+
   :plugins [[lein-parent "0.3.0"]]
   :source-paths ["src"]
   :repl-options {:init-ns lcmap.event.dev}

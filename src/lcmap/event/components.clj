@@ -26,13 +26,11 @@
 
    * https://github.com/stuartsierra/component
    * https://www.youtube.com/watch?v=13cmHf_kt-Q"
-  (:require [clojure.tools.logging :as log]
-            [com.stuartsierra.component :as component]
+  (:require [com.stuartsierra.component :as component]
             [lcmap.config.components.config :as config]
-            [lcmap.logger.components.logger :as logger]
             [lcmap.event.components.messaging :as messaging]
             [lcmap.event.components.system :as system]
-            [lcmap.event.config]))
+            [lcmap.logger.components.logger :as logger]))
 
 (defn init []
   (component/system-map
